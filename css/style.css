@@ -1,8 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
 body {
-  background: rgb(77,143,228);
   background: linear-gradient(15deg, rgba(77,143,228,1) 25%, rgba(98,215,207,1) 78%);
   height: calc(100vh - 120px);
   margin: 0;
+}
+
+button {
+  cursor: pointer;
 }
 
 .container {
@@ -25,12 +35,10 @@ body {
 }
 
 .container .inputField {
-  /* align-items: center; */
-  
   display: flex;
-  padding: 25px;
+  padding:15px;
   justify-content: center;
-  margin: 20px 0;
+  margin: 25px 0;
   height: 45px;
 
 }
@@ -61,8 +69,7 @@ input:focus {
   cursor: pointer;
   border-radius: 3px;
   /* opacity: 0.6; */
-  pointer-events: none;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .inputField button:hover {
@@ -70,13 +77,79 @@ input:focus {
 }
 
 .todoList {
+  padding: 0 15px;
   max-height: 250px;
+  /* width: 100%; */
   overflow-y: auto;
 }
 
+.todoList li{
+  position: relative;
+  list-style: none;
+  height: 45px;
+  line-height: 45px;
+  margin-bottom: 8px;
+  background: #f2f2f2;
+  border-radius: 3px;
+  padding: 0 15px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
 
-main {
-  align-items: center;
+.todoList li.done {
+  background: linear-gradient(15deg, rgba(98,215,207,.8) 25%, rgba(98,215,207,.6) 78%);
+  color: #322222;
+  text-decoration: line-through;
+}
+
+.todoList li .icon{
+  position: absolute;
+  right: -45px;
+  background: #e74c3c;
+  width: 45px;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.todoList li:hover .icon{
+  right: 0px;
+}
+
+li .icon:hover {
+  background: #cf4434;
+}
+
+.container footer {
+  padding: 0 15px;
   display: flex;
-  justify-content: center;
+  margin-top: 25px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer button{
+  padding: 6px 10px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  margin-left: 5px;
+  background: #e74c3c;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+footer button:hover {
+background: #cf4434;;
+}
+
+footer button.active{
+  opacity: 1;
+  pointer-events: auto;
 }
